@@ -1,24 +1,104 @@
 #measure 1
 use_bpm 120
 use_synth :piano
-play :D5
-play :D4
-sleep 0.5
-play :A4
-sleep 0.5
-play :D5
-play :D4
-sleep 0.5
-play :E5
-sleep 0.5
+define :dragon_melody do
+  play :D5
+  play :D4
+  sleep 0.5
+  play :A4
+  sleep 0.5
+  play :D5
+  play :D4
+  sleep 0.5
+  play :E5
+  sleep 0.5
+  
+  play :C5
+  play :D4
+  sleep 0.5
+  play :A4
+  sleep 0.5
+  play :C5
+  play :D4
+  sleep 0.5
+  play :D5
+  sleep 0.5
+  
+  play :B4
+  play :D4
+  sleep 0.5
+  play :A4
+  sleep 0.5
+  play :A4
+  play :D4
+  sleep 0.5
+  play :G4
+  sleep 0.5
+  
+  play :G4
+  play :D4
+  sleep 0.5
+  play :F4
+  sleep 0.5
+  play :E4
+  sleep 0.5
+  play :A4
+  play :D4
+  sleep 0.5
+end
 
-play :C5
-play :D4
-sleep 0.5
-play :A4
-sleep 0.5
-play :C5
-play :D4
-sleep 0.5
-play :D5
-sleep 0.5
+define :forbidden_friendship do
+  play :B4
+  play :F4
+  play :C4
+  sleep 0.5
+  play :B4
+  sleep 0.5
+  play :B4
+  sleep 0.5
+  play :C5
+  sleep 0.5
+  
+  play :B4
+  sleep 0.5
+  play :B4
+  sleep 0.5
+  play :B4
+  sleep 0.5
+  play :F4
+  sleep 0.5
+end
+
+define :wheres_hiccup do
+  sleep 1
+  play :C5
+  play :E4
+  sleep 2
+  play :C5
+  play :F4
+  sleep 2
+  play :D5
+  play :B4
+  sleep 2
+  play :E5
+  sleep 0.250
+  play :E5
+  play :G4
+  sleep 0.750
+  sleep 1
+  play :G4
+  sleep 1
+  play :E5
+  play :G4
+  sleep 1
+  play :G5
+  sleep 1
+  play :D5
+  play :B4
+  sleep 1
+  play :E5
+  sleep 0.250
+  play :E5
+  play :G4
+  sleep 0.750
+end
