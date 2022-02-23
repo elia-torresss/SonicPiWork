@@ -1,6 +1,5 @@
-#measure 1
 use_bpm 120
-use_synth :piano
+use_synth :dpulse
 define :dragon_melody do
   play :D5
   play :D4
@@ -101,4 +100,54 @@ define :wheres_hiccup do
   play :E5
   play :G4
   sleep 0.750
+end
+live_loop :dragon do
+  4.times do
+    dragon_melody
+  end
+  stop
+end
+
+
+sleep 16
+
+
+4.times do
+  sample :drum_heavy_kick, amp: 5
+  sleep 1
+end
+sleep 4
+
+4.times do
+  sample :drum_heavy_kick, amp: 5
+  sleep 1
+end
+live_loop :drum do
+  18.times do
+    sample :drum_heavy_kick, amp: 5
+    sleep 1
+  end
+  stop
+end
+sleep 3
+
+use_synth :dsaw
+wheres_hiccup
+forbidden_friendship
+
+
+live_loop :drum do
+  sample :drum_heavy_kick, amp: 10
+  sleep 1
+end
+
+live_loop :drum2 do
+  sample :drum_tom_lo_hard, amp: 2
+  sleep 1
+end
+use_synth :dsaw
+wheres_hiccup
+forbidden_friendship
+live_loop :dragon do
+  dragon_melody
 end
