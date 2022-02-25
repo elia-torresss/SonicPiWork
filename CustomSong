@@ -4,6 +4,9 @@ use_synth :dpulse
 roar = "C:/Users/elia_torres/Downloads/cool_Dragon_Roar.wav"
 
 
+
+
+
 define :dragon_melody do
   play :D5
   play :D4
@@ -108,7 +111,9 @@ end
 
 sample roar
 sleep 4
-
+with_fx :echo do
+  dragon_melody
+end
 live_loop :dragon do
   4.times do
     dragon_melody
