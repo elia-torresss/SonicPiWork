@@ -1,6 +1,7 @@
 use_bpm 120
 use_synth :dpulse
-
+n=0.25
+m= 0.1
 roar = "C:/Users/elia_torres/Downloads/cool_Dragon_Roar.wav"
 
 
@@ -108,8 +109,9 @@ define :wheres_hiccup do
   play :G4
   sleep 0.750
 end
-
-sample roar
+with_fx :echo do
+  sample roar
+end
 sleep 4
 with_fx :echo do
   dragon_melody
@@ -151,7 +153,7 @@ forbidden_friendship
 
 live_loop :drum do
   58.times do
-    sample :drum_heavy_kick, amp: 10
+    sample :drum_heavy_kick, amp: 5
     sleep 1
   end
   stop
@@ -165,15 +167,38 @@ live_loop :drum2 do
   stop
 end
 
+
 use_synth :dsaw
 wheres_hiccup
 forbidden_friendship
-live_loop :dragon do
-  2.times do
-    sample roar
-    sleep 4
-    dragon_melody
-    dragon_melody
+with_fx :echo do
+  live_loop :dragon do
+    2.times do
+      sample roar
+      sleep 4
+      dragon_melody
+      dragon_melody
+    end
+    stop
+  end
+end
+
+sleep 40
+live_loop :end2 do
+  16.times do
+    sample :drum_tom_lo_hard, amp: n
+    sleep 0.5
+    m = m + 0.2
   end
   stop
 end
+live_loop :end do
+  16.times do
+    sample :drum_heavy_kick, amp: n
+    sleep 0.5
+    n = n + 0.25
+  end
+  stop
+end
+sleep 8
+sample roar
