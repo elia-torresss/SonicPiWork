@@ -4,49 +4,20 @@ n=0.25
 m= 0.1
 roar = "C:/Users/elia_torres/Downloads/cool_Dragon_Roar.wav"
 
-
-
-
-
 define :dragon_melody do
-  play :D5
-  play :D4
-  sleep 0.5
-  play :A4
-  sleep 0.5
-  play :D5
-  play :D4
-  sleep 0.5
-  play :E5
-  sleep 0.5
+  notes = [:d5, :d4, :a4, :d5, :d4, :e5, :c5, :d4, :a4,:c5, :d4, :d5, :b4, :d4, :a4, :a4, :d4, :g4, :g4, :d4, :f4]
+  index = 0
   
-  play :C5
-  play :D4
-  sleep 0.5
-  play :A4
-  sleep 0.5
-  play :C5
-  play :D4
-  sleep 0.5
-  play :D5
-  sleep 0.5
-  
-  play :B4
-  play :D4
-  sleep 0.5
-  play :A4
-  sleep 0.5
-  play :A4
-  play :D4
-  sleep 0.5
-  play :G4
-  sleep 0.5
-  
-  play :G4
-  play :D4
-  sleep 0.5
-  play :F4
-  sleep 0.5
+  7.times do
+    2.times do
+      play notes[index]
+      index = index +1
+    end
+    sleep 0.5
+    play notes[index]
+    index = index +1
+    sleep 0.5
+  end
   play :E4
   sleep 0.5
   play :A4
@@ -55,25 +26,20 @@ define :dragon_melody do
 end
 
 define :forbidden_friendship do
-  play :B4
-  play :F4
-  play :C4
-  sleep 0.5
-  play :B4
-  sleep 0.5
-  play :B4
-  sleep 0.5
-  play :C5
-  sleep 0.5
   
-  play :B4
+  notes = [:b4,:f4,:c4,:b4,:b4,:c5,:b4,:b4,:b4,:f4]
+  index = 0
+  
+  3.times do
+    play notes[index]
+    index = index +1
+  end
   sleep 0.5
-  play :B4
-  sleep 0.5
-  play :B4
-  sleep 0.5
-  play :F4
-  sleep 0.5
+  7.times do
+    play notes[index]
+    index = index +1
+    sleep 0.5
+  end
 end
 
 define :wheres_hiccup do
