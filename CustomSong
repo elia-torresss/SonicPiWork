@@ -43,22 +43,29 @@ define :forbidden_friendship do
 end
 
 define :wheres_hiccup do
-  sleep 1
-  play :C5
-  play :E4
-  sleep 2
-  play :C5
-  play :F4
-  sleep 2
-  play :D5
-  play :B4
+  i=0
+  q=0
+  time = [1,2,2]
+  sound = [:C5, :E4, :C5, :F4, :D5, :B4]
+  define :notes do |t,n|
+    sleep t
+    q=q+1
+    play n
+    i= i+1
+    play n
+    i= i+1
+  end
+  
+  3.times do
+    notes time[q],sound[i]
+  end
+  
   sleep 2
   play :E5
   sleep 0.250
   play :E5
   play :G4
-  sleep 0.750
-  sleep 1
+  sleep 1.750
   play :G4
   sleep 1
   play :E5
