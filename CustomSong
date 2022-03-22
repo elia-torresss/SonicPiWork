@@ -26,7 +26,6 @@ define :dragon_melody do
 end
 
 define :forbidden_friendship do
-  
   notes = [:b4,:f4,:c4,:b4,:b4,:c5,:b4,:b4,:b4,:f4]
   index = 0
   
@@ -82,6 +81,8 @@ define :wheres_hiccup do
   play :G4
   sleep 0.750
 end
+#end of functions
+
 with_fx :echo do
   sample roar
 end
