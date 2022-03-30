@@ -1,0 +1,107 @@
+people = "C:/Users/elia_torres/Downloads/people2.wav"
+n=1
+k=4
+use_bpm 120
+use_synth :dpulse
+define :dundun do
+  notes = [:a4,:b4,:g4,:b4,:f4,:b4,:g4,:b4,:e4,:b4]
+  index = 0
+  
+  define :dun do |n|
+    play n, amp: 1
+    index= index+1
+    sleep 0.5
+  end
+  
+  10.times do
+    dun notes[index]
+  end
+end
+
+define :eleanor do
+  index=0
+  notes = [:a4, :a4, :b4, :g4, :e4]
+  
+  3.times do
+    play notes [index], amp: 1
+    index=index+1
+    sleep 0.5
+  end
+  2.times do
+    play notes[index], amp: 1
+    index=index+1
+    sleep 1
+  end
+end
+
+sample people
+sleep 9
+
+live_loop :drum do
+  9.times do
+    sample :drum_heavy_kick, amp: 10
+    sleep 1
+  end
+  stop
+end
+with_fx :echo do
+  dundun
+end
+
+
+live_loop :dr do
+  9.times do
+    sample :drum_heavy_kick, amp: 10
+    sleep 1
+  end
+  stop
+end
+live_loop :kick do
+  9.times do
+    sample :drum_tom_lo_hard, amp: 0.5
+    sleep 1
+  end
+  stop
+end
+with_fx :autotuner do
+  eleanor
+end
+dundun
+sleep 0.5
+sample people
+sleep 9
+live_loop :kicks do
+  9.times do
+    sample :drum_tom_lo_hard, amp: 2
+    sleep 1
+  end
+  stop
+end
+
+live_loop :dru do
+  9.times do
+    sample :drum_heavy_kick, amp: 4
+    sleep 1
+  end
+  stop
+end
+eleanor
+dundun
+live_loop :finale do
+  5.times do
+    sample people, amp: n
+    sleep 8.5
+    n = n - 0.20
+  end
+  stop
+end
+live_loop :star do
+  5.times do
+    8.times do
+      sample :drum_heavy_kick, amp: k
+      sleep 1
+    end
+    k=k-0.7
+  end
+  stop
+end
